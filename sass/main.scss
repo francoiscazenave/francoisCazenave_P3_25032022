@@ -5,7 +5,6 @@
 // Header
 
 .header {
-
   &__title {
     text-align: center;
   }
@@ -61,9 +60,64 @@
     text-align: center;
 
     &:hover {
-      background: linear-gradient( lighten($color-secondary, 5), lighten($color-primary, 5 ));
+      background: linear-gradient(lighten($color-secondary, 5), lighten($color-primary, 5));
       box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
     }
   }
 }
 
+// Fonctionnement
+
+.filters {
+  h2 {
+    margin-left: 20px;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  &__card {
+    display: flex;
+    align-items: center;
+    width: 80%;
+    border-radius: 30px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 30px;
+    position: relative;
+    padding: 10px 5px;
+
+    &__num {
+      position: absolute;
+      left: -10px;
+      background: $color-primary;
+      color: white;
+      border-radius: 50%;
+      padding: 5px 10px;
+    }
+
+    i {
+      margin-right: 20px;
+      padding-left: 40px;
+    }
+
+    &:hover {
+      background: lighten($color-primary, 35%);
+
+      i {
+        color: $color-primary;
+      }
+    }
+  }
+
+  .filters__card--active {
+    background: lighten($color-primary, 35%);
+
+    i {
+      color: $color-primary;
+    }
+  }
+}
