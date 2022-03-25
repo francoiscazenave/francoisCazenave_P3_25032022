@@ -27,3 +27,43 @@
     }
   }
 }
+
+// Banner
+
+.banner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $color-quinary;
+  padding-bottom: 50px;
+
+  h2 {
+    margin: 30px 15px 20px 15px;
+    text-align: center;
+    font-size: 2em;
+  }
+
+  p {
+    font-weight: 100;
+    text-align: center;
+    margin: 0 15px 30px 15px;
+  }
+
+  button {
+    color: white;
+    width: 50%;
+    padding: 18px 10px;
+    border: none;
+    border-radius: 30px;
+    font-size: 0.9em;
+    background: linear-gradient($color-secondary, $color-primary);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+
+    &:hover {
+      background: linear-gradient( lighten($color-secondary, 5), lighten($color-primary, 5 ));
+      box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    }
+  }
+}
+
