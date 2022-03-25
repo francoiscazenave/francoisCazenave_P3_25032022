@@ -1,0 +1,21 @@
+{
+  "name": "francoiscazenave_p3_25032022",
+  "version": "1.0.0",
+  "description": "Dynamisez une page web avec des animations CSS",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./sass/main.scss:./css/style.css -w --style compressed",
+    "prefix": "postcss ./css/style.css --use autoprefixer -d ./css/prefixed/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/francoiscazenave/francoisCazenave_P3_25032022.git"
+  },
+  "keywords": [],
+  "author": "Francois",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/francoiscazenave/francoisCazenave_P3_25032022/issues"
+  },
+  "homepage": "https://github.com/francoiscazenave/francoisCazenave_P3_25032022#readme"
+}

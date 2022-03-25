@@ -1,0 +1,29 @@
+@import "./utils/variables";
+
+@import "./base/base";
+
+// Header
+
+.header {
+
+  &__title {
+    text-align: center;
+  }
+
+  &__location {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $color-quaternary;
+    box-shadow: -1px 5px 5px rgba(0, 0, 0, 0.2) inset;
+
+    i {
+      font-size: 1.1em;
+    }
+
+    p {
+      margin-left: 15px;
+      font-size: 1.1em;
+    }
+  }
+}
