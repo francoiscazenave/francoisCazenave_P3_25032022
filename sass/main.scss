@@ -106,6 +106,7 @@
 
     &:hover {
       background: lighten($color-primary, 35%);
+      box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4);
 
       i {
         color: $color-primary;
@@ -115,6 +116,7 @@
 
   .filters__card--active {
     background: lighten($color-primary, 35%);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4);
 
     i {
       color: $color-primary;
@@ -197,6 +199,47 @@
       cursor: pointer;
       background-size: 100%;
       background-clip: margin-box;
+    }
+  }
+}
+
+// Section footer
+
+footer {
+  background-color: #2d2d2d;
+  padding: 20px 0 20px 0;
+
+  h3 {
+    color: white;
+    font-family: "Shrikhand", cursive;
+    margin-left: 30px;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin-left: 30px;
+
+    li {
+      margin-bottom: 15px;
+    }
+
+    a {
+      color: white;
+      text-decoration: none;
+    }
+
+    a:visited {
+      color: white;
+    }
+
+    .contact {
+      color: white;
+    }
+
+    i {
+      margin-right: 10px;
+      font-size: 0.8em;
     }
   }
 }
