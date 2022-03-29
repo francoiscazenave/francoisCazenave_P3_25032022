@@ -2,6 +2,51 @@
 
 @import "./base/base";
 
+// Loader
+
+.spinner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #333333;
+  animation: fadeOut 3s ease-in-out forwards;
+  z-index: 9999;
+}
+
+.spinner::after {
+  content: "";
+  width: 75px;
+  height: 75px;
+  border: 15px solid #dddddd;
+  border-top-color: $color-primary;
+  border-radius: 50%;
+  animation: loading 1s ease infinite;
+}
+
+@keyframes loading {
+  from {
+    transform: rotate(0turn);
+  }
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
 // Header
 
 .header {
@@ -193,12 +238,11 @@
       }
     }
 
-    i {
+    &__like {
       margin-right: 15px;
       font-size: 1.5em;
+      color: #4b4a4a;
       cursor: pointer;
-      background-size: 100%;
-      background-clip: margin-box;
     }
   }
 }
