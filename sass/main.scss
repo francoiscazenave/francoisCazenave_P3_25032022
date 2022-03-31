@@ -322,11 +322,11 @@
 
         100% {
           font-weight: 800;
-        background: linear-gradient($color-secondary, $color-primary);
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        opacity: 1;
+          background: linear-gradient($color-secondary, $color-primary);
+          background-clip: text;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          opacity: 1;
         }
       }
     }
@@ -376,6 +376,8 @@ footer {
 
 // Page menu
 
+// Header menu
+
 .header-menu {
   display: flex;
   align-items: center;
@@ -394,5 +396,15 @@ footer {
   i {
     font-size: 1.2em;
     margin-left: 20px;
+  }
+}
+
+// Banner Menu
+
+.banner-menu {
+  img {
+    height: 300px;
+    width: 100%;
+    object-fit: cover;
   }
 }
