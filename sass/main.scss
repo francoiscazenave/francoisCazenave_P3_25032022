@@ -14,7 +14,7 @@
   align-items: center;
   justify-content: center;
   background: #333333;
-  animation: fadeOut 3s ease-in-out forwards;
+  animation: fadeOut 5000ms forwards;
   z-index: 9999;
 }
 
@@ -25,7 +25,7 @@
   border: 15px solid #dddddd;
   border-top-color: $color-primary;
   border-radius: 50%;
-  animation: loading 1s ease infinite;
+  animation: loading 1000ms infinite;
 }
 
 @keyframes loading {
@@ -102,11 +102,28 @@
     font-size: 0.9em;
     background: linear-gradient($color-secondary, $color-primary);
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
-    text-align: center;
+    position: relative;
+    z-index: 1;
 
     &:hover {
+      &::after {
+        opacity: 1;
+      }
+    }
+
+    &::after {
+      content: "";
+      border-radius: 30px;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: -1;
       background: linear-gradient(lighten($color-secondary, 5), lighten($color-primary, 5));
       box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+      opacity: 0;
+      transition: opacity 250ms;
     }
   }
 }
@@ -134,6 +151,7 @@
     margin-bottom: 30px;
     position: relative;
     padding: 10px 5px;
+    z-index: 1;
 
     &__num {
       position: absolute;
@@ -150,12 +168,28 @@
     }
 
     &:hover {
-      background: lighten($color-primary, 35%);
-      box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4);
+      &::after {
+        opacity: 1;
+      }
 
       i {
         color: $color-primary;
       }
+    }
+
+    &::after {
+      content: "";
+      border-radius: 30px;
+      background: lighten($color-primary, 35%);
+      box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4);
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      opacity: 0;
+      z-index: -1;
+      transition: opacity 250ms;
     }
   }
 
@@ -239,10 +273,62 @@
     }
 
     &__like {
+      display: inline-block;
       margin-right: 15px;
       font-size: 1.5em;
       color: #4b4a4a;
       cursor: pointer;
+
+      &:hover {
+        animation: like 1500ms ease-out forwards;
+      }
+
+      @keyframes like {
+        0% {
+          font-weight: 800;
+          background: linear-gradient(lighten($color-secondary, 5), lighten($color-primary, 5));
+          background-clip: text;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          opacity: 0;
+        }
+
+        25% {
+          font-weight: 800;
+          background: linear-gradient(lighten($color-secondary, 15), lighten($color-primary, 15));
+          background-clip: text;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          opacity: 0.3;
+        }
+
+        50% {
+          font-weight: 800;
+          background: linear-gradient(lighten($color-secondary, 10), lighten($color-primary, 10));
+          background-clip: text;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          opacity: 0.5;
+        }
+
+        75% {
+          font-weight: 800;
+          background: linear-gradient(lighten($color-secondary, 5), lighten($color-primary, 5));
+          background-clip: text;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          opacity: 0.8;
+        }
+
+        100% {
+          font-weight: 800;
+        background: linear-gradient($color-secondary, $color-primary);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        opacity: 1;
+        }
+      }
     }
   }
 }
