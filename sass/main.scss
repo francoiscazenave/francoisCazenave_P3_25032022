@@ -273,11 +273,9 @@
     }
 
     &__like {
-      display: inline-block;
       margin-right: 15px;
       font-size: 1.5em;
       color: #4b4a4a;
-      cursor: pointer;
 
       &:hover {
         animation: like 1500ms ease-out forwards;
@@ -381,7 +379,7 @@ footer {
 .header-menu {
   display: flex;
   align-items: center;
-  gap: 20%;
+  gap: 15%;
   margin: 0 10px;
 
   a {
@@ -395,8 +393,12 @@ footer {
 
   i {
     font-size: 1.2em;
-    margin-left: 20px;
+    margin-left: 15px;
   }
+}
+
+main {
+  background-color: $color-background;
 }
 
 // Banner Menu
@@ -407,4 +409,106 @@ footer {
     width: 100%;
     object-fit: cover;
   }
+}
+
+// Titre menu
+
+.title {
+  height: 0;
+
+  &__menu {
+    position: relative;
+    background-color: $color-background;
+    top: -80px;
+    margin-top: 30px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+
+    h1 {
+      margin-left: 15px;
+    }
+
+    i {
+      color: #4b4a4a;
+      cursor: pointer;
+      margin-left: 30px;
+      font-size: 1.8em;
+
+      &:hover {
+        animation: like 1500ms ease-out forwards;
+      }
+    }
+  }
+}
+
+// Section menu
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  max-width: 1440px;
+
+  &__section {
+    margin: 0 10px 10px 10px;
+
+    &__title {
+      font-weight: 300;
+    }
+
+    &__card {
+      background: white;
+      border-radius: 20px;
+      box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+      position: relative;
+      padding: 3px 5px;
+      margin-bottom: 20px;
+
+      h3 {
+        margin: 10px 0 0 10px;
+        font-weight: 500;
+      }
+
+      &__txt {
+        margin: 5px 0 10px 10px;
+        font-weight: 300;
+        width: 75%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      &__price {
+        position: absolute;
+        bottom: 0;
+        right: 30px;
+        font-weight: 500;
+      }
+
+      &__check {
+        position: absolute;
+        right: 0;
+        top: 0;
+        background: $color-tertiary;
+        height: 100%;
+        width: 20%;
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        display: none;
+
+        i {
+          color: white;
+        }
+      }
+    }
+  }
+}
+
+.sousTitre {
+  border-bottom: 2px solid $color-tertiary;
 }
