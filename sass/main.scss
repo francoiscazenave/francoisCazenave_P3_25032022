@@ -52,6 +52,14 @@
 .header {
   &__title {
     text-align: center;
+
+    @media screen and (min-width: map-get($breakpoints, tablet)) and (max-width: map-get($breakpoints, desktop)) {
+      font-size: 3em;
+    }
+
+    @media screen and (min-width: map-get($breakpoints, desktop)) {
+      font-size: 5em;
+    }
   }
 
   &__location {
@@ -165,7 +173,8 @@
 
     @media screen and (min-width: map-get($breakpoints, desktop)) {
       flex-direction: row;
-      justify-content: space-between;
+      justify-content: space-around;
+      flex-wrap: wrap;
     }
   }
 
@@ -186,7 +195,7 @@
     }
 
     @media screen and (min-width: map-get($breakpoints, desktop)) {
-      width: 30%;
+      width: 20%;
     }
 
     &__num {
@@ -246,6 +255,11 @@
   padding-bottom: 30px;
   background: $color-background;
 
+  @media screen and (min-width: map-get($breakpoints, desktop)) {
+    border-radius: 20px;
+    margin-bottom: 30px;
+  }
+
   &__title {
     margin-left: 20px;
 
@@ -290,7 +304,7 @@
   }
 
   @media screen and (min-width: map-get($breakpoints, desktop)) {
-    width: 35%;
+    width: 20%;
   }
 
   a {
@@ -329,9 +343,11 @@
     &__txt {
       display: flex;
       flex-direction: column;
+      font-weight: 100;
 
       h2 {
         margin: 10px 0 10px 10px;
+        font-weight: 500;
       }
 
       p {
@@ -409,6 +425,10 @@ footer {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    h3 {
+      font-size: 1.5em;
+    }
   }
 
   @media screen and (min-width: map-get($breakpoints, desktop)) {
@@ -470,6 +490,26 @@ footer {
   gap: 15%;
   margin: 0 10px;
 
+  @media screen and (min-width: map-get($breakpoints, tablet)) and (max-width: map-get($breakpoints, desktop)) {
+    justify-content: flex-start;
+    gap: 250px;
+
+    h1 {
+      font-size: 3em;
+    }
+  }
+
+  @media screen and (min-width: map-get($breakpoints, desktop)) {
+    justify-content: flex-start;
+    gap: 40%;
+    padding-top: 20px;
+
+    h1 {
+      font-size: 2.8em;
+
+    }
+  }
+
   a {
     text-decoration: none;
     color: black;
@@ -482,6 +522,10 @@ footer {
   i {
     font-size: 1.2em;
     margin-left: 15px;
+
+    @media screen and (min-width: map-get($breakpoints, tablet)) and (max-width: map-get($breakpoints, desktop)) {
+      font-size: 2em;
+    }
   }
 }
 
@@ -515,7 +559,17 @@ footer {
     display: flex;
     align-items: center;
 
-    h1 {
+    @media screen and (min-width: map-get($breakpoints, tablet)) and (max-width: map-get($breakpoints, desktop)) {
+      justify-content: space-around;
+    }
+  
+    @media screen and (min-width: map-get($breakpoints, desktop)) {
+      justify-content: space-around;
+    }
+
+    h2 {
+      font-family: "Shrikhand", cursive;
+      font-size: 2em;
       margin-left: 15px;
     }
 
@@ -537,7 +591,21 @@ footer {
 .menu {
   display: flex;
   flex-direction: column;
-  max-width: 1440px;
+
+  @media screen and (min-width: map-get($breakpoints, tablet)) and (max-width: map-get($breakpoints, desktop)) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content:space-around;
+    gap: 30px;
+    max-width: 1440px;
+  }
+
+  @media screen and (min-width: map-get($breakpoints, desktop)) {
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 80px auto;
+    max-width: 1440px;
+  }
 
   &__section {
     margin: 0 10px 10px 10px;
@@ -620,6 +688,14 @@ footer {
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
     position: relative;
     z-index: 1;
+
+    @media screen and (min-width: map-get($breakpoints, tablet)) and (max-width: map-get($breakpoints, desktop)) {
+      width: 20%;
+    }
+  
+    @media screen and (min-width: map-get($breakpoints, desktop)) {
+      width: 10%;
+    }
 
     &:hover {
       &::after {
