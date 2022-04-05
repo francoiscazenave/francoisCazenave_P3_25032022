@@ -588,6 +588,17 @@ footer {
 
 // Section menu
 
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+  }
+  100% {
+    opacity: 1;
+    
+  }
+}
+
 .menu {
   display: flex;
   flex-direction: column;
@@ -609,6 +620,14 @@ footer {
 
   &__section {
     margin: 0 10px 10px 10px;
+    opacity: 0;
+
+    @for $i from 1 through 3 {
+      &--#{$i} {
+        animation: fadeIn 1500ms ease-in-out forwards;
+        animation-delay: 800ms * 2 * $i;
+      }
+    }
 
     &__title {
       font-weight: 300;
@@ -621,6 +640,14 @@ footer {
       position: relative;
       padding: 3px 5px;
       margin-bottom: 20px;
+      opacity: 0;
+
+      @for $i from 1 through 9 {
+        &--#{$i} {
+          animation: fadeIn 1500ms ease-in-out forwards;
+          animation-delay: 800ms * $i;
+        }
+      }
 
       h3 {
         margin: 10px 0 0 10px;
