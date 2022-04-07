@@ -506,7 +506,6 @@ footer {
 
     h1 {
       font-size: 2.8em;
-
     }
   }
 
@@ -562,7 +561,7 @@ footer {
     @media screen and (min-width: map-get($breakpoints, tablet)) and (max-width: map-get($breakpoints, desktop)) {
       justify-content: space-around;
     }
-  
+
     @media screen and (min-width: map-get($breakpoints, desktop)) {
       justify-content: space-around;
     }
@@ -588,6 +587,8 @@ footer {
 
 // Section menu
 
+// Animations des cartes
+
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -595,9 +596,56 @@ footer {
   }
   100% {
     opacity: 1;
-    
   }
 }
+
+@keyframes checked {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 15%;
+  }
+}
+
+@keyframes checkedFade {
+  0% {
+    width: 15%;
+  }
+  100% {
+    width: 0%;
+  }
+}
+
+@keyframes iconAnim {
+  from {
+    transform: rotate(0turn);
+    opacity: 0;
+  }
+  to {
+    transform: rotate(1turn);
+    opacity: 1;
+  }
+}
+
+@keyframes priceMove {
+  0% {
+    right: 30px;
+  }
+  100% {
+    right: 55px;
+  }
+}
+
+@keyframes cardMove {
+  0% {
+    width: 80%;
+  }
+  100% {
+    width: 73%;
+  }
+}
+
 
 .menu {
   display: flex;
@@ -606,9 +654,9 @@ footer {
   @media screen and (min-width: map-get($breakpoints, tablet)) and (max-width: map-get($breakpoints, desktop)) {
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content:space-around;
-    gap: 30px;
-    max-width: 1440px;
+    justify-content: space-around;
+    gap: 20px;
+    /* max-width: 1440px; */
   }
 
   @media screen and (min-width: map-get($breakpoints, desktop)) {
@@ -624,8 +672,8 @@ footer {
 
     @for $i from 1 through 3 {
       &--#{$i} {
-        animation: fadeIn 1500ms ease-in-out forwards;
-        animation-delay: 800ms * 2 * $i;
+        animation: fadeIn 800ms ease-in-out forwards;
+        animation-delay: 400ms * 2 * $i;
       }
     }
 
@@ -634,6 +682,8 @@ footer {
     }
 
     &__card {
+      display: flex;
+      justify-content: flex-start;
       background: white;
       border-radius: 20px;
       box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
@@ -642,31 +692,55 @@ footer {
       margin-bottom: 20px;
       opacity: 0;
 
+      &:hover {
+        .menu__section__card__check {
+          animation: checked 500ms ease-in-out forwards;
+
+          i {
+            animation: iconAnim 500ms ease-in-out forwards;
+          }
+        }
+
+        .menu__section__card__price {
+          animation: priceMove 500ms ease-in-out forwards;
+        }
+
+        .menu__section__card__description {
+          animation: cardMove 500ms ease-in-out forwards;
+      }
+    }
+
       @for $i from 1 through 9 {
         &--#{$i} {
-          animation: fadeIn 1500ms ease-in-out forwards;
-          animation-delay: 800ms * $i;
+          animation: fadeIn 800ms ease-in-out forwards;
+          animation-delay: 400ms * $i;
         }
       }
 
       h3 {
         margin: 10px 0 0 10px;
+        padding-bottom: 0;
         font-weight: 500;
+        white-space: nowrap;
       }
 
       &__txt {
-        margin: 5px 0 10px 10px;
+        margin: 0 0 10px 10px;
         font-weight: 300;
-        width: 75%;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
+      }
+
+      &__description {
+        width: 80%;
       }
 
       &__price {
         position: absolute;
         bottom: 0;
         right: 30px;
+        width: 10%;
         font-weight: 500;
       }
 
@@ -676,16 +750,17 @@ footer {
         top: 0;
         background: $color-tertiary;
         height: 100%;
-        width: 15%;
+        width: 0%;
         border-top-right-radius: 20px;
         border-bottom-right-radius: 20px;
         display: flex;
         justify-content: center;
         align-items: center;
-        display: none;
+        animation: checkedFade 500ms ease-in-out forwards;
 
         i {
           color: white;
+          opacity: 0;
         }
       }
     }
@@ -719,7 +794,7 @@ footer {
     @media screen and (min-width: map-get($breakpoints, tablet)) and (max-width: map-get($breakpoints, desktop)) {
       width: 20%;
     }
-  
+
     @media screen and (min-width: map-get($breakpoints, desktop)) {
       width: 10%;
     }
