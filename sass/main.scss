@@ -710,7 +710,7 @@ footer {
       }
     }
 
-      @for $i from 1 through 9 {
+      @for $i from 1 through 10 {
         &--#{$i} {
           animation: fadeIn 800ms ease-in-out forwards;
           animation-delay: 400ms * $i;
