@@ -505,7 +505,7 @@ footer {
     padding-top: 20px;
 
     h1 {
-      font-size: 2.8em;
+      font-size: 5em;
     }
   }
 
@@ -524,6 +524,10 @@ footer {
 
     @media screen and (min-width: map-get($breakpoints, tablet)) and (max-width: map-get($breakpoints, desktop)) {
       font-size: 2em;
+    }
+
+    @media screen and (min-width: map-get($breakpoints, desktop)) {
+      font-size: 3em;
     }
   }
 }
@@ -564,6 +568,10 @@ footer {
 
     @media screen and (min-width: map-get($breakpoints, desktop)) {
       justify-content: space-around;
+
+      h2 {
+        font-size: 3em;
+      }
     }
 
     h2 {
@@ -637,6 +645,23 @@ footer {
   }
 }
 
+<<<<<<< Updated upstream
+=======
+// Animation pour replacer le prix à la fin du hoover
+
+@keyframes priceRemove {
+  0% {
+    right: 55px;
+  }
+  100% {
+    right: 30px;
+  }
+}
+
+/* Animation pour reduire la taille de la div qui contient le texte 
+   lors de l'animation checked */
+
+>>>>>>> Stashed changes
 @keyframes cardMove {
   0% {
     width: 80%;
@@ -740,8 +765,10 @@ footer {
         position: absolute;
         bottom: 0;
         right: 30px;
+        margin-top: 50px;
         width: 10%;
         font-weight: 500;
+        animation: priceRemove 500ms ease-in-out forwards;
       }
 
       &__check {
