@@ -28,6 +28,8 @@
   animation: loading 1000ms infinite;
 }
 
+// Animation de la rotation
+
 @keyframes loading {
   from {
     transform: rotate(0turn);
@@ -36,6 +38,8 @@
     transform: rotate(1turn);
   }
 }
+
+// Animation de l'opacité du fond de chargement
 
 @keyframes fadeOut {
   0% {
@@ -139,6 +143,7 @@
       background: linear-gradient(lighten($color-secondary, 5), lighten($color-primary, 5));
       box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
       opacity: 0;
+      // Transition sur l'opacité
       transition: opacity 250ms;
     }
   }
@@ -363,6 +368,9 @@
       &:hover {
         animation: like 1500ms ease-out forwards;
       }
+
+      // Animation remplissage du coeur
+      // background-clip pour remplir le coeur avec le dégradé
 
       @keyframes like {
         0% {
@@ -589,6 +597,8 @@ footer {
 
 // Animations des cartes
 
+// Affichage progressif du menu
+
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -599,6 +609,8 @@ footer {
   }
 }
 
+// Animation pour l'affichage du check
+
 @keyframes checked {
   0% {
     width: 0%;
@@ -608,6 +620,8 @@ footer {
   }
 }
 
+// Animation pour le retrait du check à la fin du hover
+
 @keyframes checkedFade {
   0% {
     width: 15%;
@@ -616,6 +630,8 @@ footer {
     width: 0%;
   }
 }
+
+// Animation de la rotation de l'icone check
 
 @keyframes iconAnim {
   from {
@@ -628,6 +644,8 @@ footer {
   }
 }
 
+// Animation pour déplacer le prix lors de l'animation checked
+
 @keyframes priceMove {
   0% {
     right: 30px;
@@ -636,6 +654,9 @@ footer {
     right: 55px;
   }
 }
+
+/* Animation pour reduire la taille de la div qui contient le texte 
+   lors de l'animation checked */
 
 @keyframes cardMove {
   0% {
@@ -646,17 +667,16 @@ footer {
   }
 }
 
-
 .menu {
   display: flex;
   flex-direction: column;
+  width: 100%;
 
   @media screen and (min-width: map-get($breakpoints, tablet)) and (max-width: map-get($breakpoints, desktop)) {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
     gap: 20px;
-    /* max-width: 1440px; */
   }
 
   @media screen and (min-width: map-get($breakpoints, desktop)) {
@@ -669,6 +689,8 @@ footer {
   &__section {
     margin: 0 10px 10px 10px;
     opacity: 0;
+
+    // Boucle pour appliquer l'affichage progressif aux titres des sections
 
     @for $i from 1 through 3 {
       &--#{$i} {
@@ -692,6 +714,16 @@ footer {
       margin-bottom: 20px;
       opacity: 0;
 
+      @media screen and (min-width: map-get($breakpoints, tablet)) and (max-width: map-get($breakpoints, desktop)) {
+        width: 350px;
+      }
+
+      @media screen and (min-width: map-get($breakpoints, desktop)) {
+        width: 400px;
+      }
+
+      // Appel des animations pour le checked
+
       &:hover {
         .menu__section__card__check {
           animation: checked 500ms ease-in-out forwards;
@@ -707,8 +739,10 @@ footer {
 
         .menu__section__card__description {
           animation: cardMove 500ms ease-in-out forwards;
+        }
       }
-    }
+
+      // // Boucle pour appliquer l'affichage progressif de la carte
 
       @for $i from 1 through 10 {
         &--#{$i} {
