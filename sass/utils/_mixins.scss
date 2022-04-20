@@ -1,0 +1,15 @@
+@mixin buttonAfter {
+  content: "";
+  border-radius: 30px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  background: linear-gradient(lighten($color-secondary, 5), lighten($color-primary, 5));
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  // Transition sur l'opacité
+  transition: opacity 250ms;
+}
